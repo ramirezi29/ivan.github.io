@@ -5,105 +5,145 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ivan Ramirez | iOS Developer</title>
   <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      background: #f9f9f9;
-      color: #333;
-      line-height: 1.6;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+        Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      background: linear-gradient(135deg, #e6e9f0 0%, #eef1f5 100%);
+      color: #1c1c1e;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 1rem 2rem;
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.7);
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+    }
+
+    nav h1 {
+      font-size: 1.5rem;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #1c1c1e;
+      font-weight: 500;
     }
 
     header {
-      background: #1e1e1e;
-      color: white;
-      padding: 2rem 1rem;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       text-align: center;
+      padding: 4rem 2rem 2rem;
     }
 
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-    }
-
-    header p {
-      margin-top: 0.5rem;
-      font-size: 1.2rem;
-    }
-
-    main {
-      padding: 2rem 10%;
+    header h2 {
+      font-size: 3rem;
+      font-weight: 600;
+      color: #1c1c1e;
     }
 
     section {
-      margin-bottom: 2rem;
+      padding: 5rem 10% 2rem;
+      max-width: 960px;
+      margin: 0 auto;
     }
 
-    section h2 {
-      color: #007acc;
-      border-bottom: 2px solid #007acc;
-      padding-bottom: 0.5rem;
-    }
-
-    .project-list li {
+    section h3 {
+      font-size: 2rem;
       margin-bottom: 1rem;
+      color: #0071e3;
+    }
+
+    .project {
+      margin-bottom: 2.5rem;
+      padding: 1.5rem;
+      background: rgba(255, 255, 255, 0.6);
+      border-radius: 20px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .project h4 {
+      margin-bottom: 0.5rem;
+    }
+
+    .project a {
+      color: #0071e3;
+      text-decoration: none;
     }
 
     footer {
       text-align: center;
-      padding: 1rem;
-      background: #1e1e1e;
-      color: white;
-    }
-
-    a {
-      color: #007acc;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
+      padding: 3rem 2rem;
+      font-size: 0.9rem;
+      color: #888;
     }
   </style>
 </head>
 <body>
-  <header>
+  <nav>
     <h1>Ivan Ramirez</h1>
-    <p>iOS Developer | Swift & SwiftUI | Clean, user-focused apps</p>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Apps</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h2>iOS Engineer crafting intuitive and elegant Apple-native experiences.</h2>
   </header>
 
-  <main>
-    <section id="about">
-      <h2>About Me</h2>
-      <p>
-        I’m an iOS developer with a passion for building intuitive and accessible mobile apps. I focus on clean code, thoughtful UX, and using the latest Apple technologies like SwiftUI and Combine.
-      </p>
-    </section>
+  <section id="about">
+    <h3>About Me</h3>
+    <p>
+      I'm an iOS developer with a background in psychology and a passion for building smooth, accessible, and delightful apps. I focus on Apple's latest technologies like SwiftUI, Combine, and VisionKit to create user experiences that feel native, thoughtful, and fast. I'm currently a contract Software Content Engineer at Apple.
+    </p>
+  </section>
 
-    <section id="projects">
-      <h2>Projects</h2>
-      <ul class="project-list">
-        <li>
-          <strong><a href="https://apps.apple.com/us/app/cardsofopportunity/id6476826273" target="_blank">Cards of Opportunity</a></strong> – A holistic healing app combining reflection prompts and empowering messages to support personal growth and self-awareness.
-        </li>
-        <li>
-          <strong><a href="https://apps.apple.com/us/app/wardcount/id6737144611" target="_blank">WardCount</a></strong> – A lightweight iOS app designed for Latter-day Saint ward clerks to track sacrament meeting attendance quickly and efficiently.
-        </li>
-      </ul>
-    </section>
+  <section id="projects">
+    <h3>Apps</h3>
+    <div class="project">
+      <h4><a href="https://apps.apple.com/us/app/cardsofopportunity/id6476826273" target="_blank">Cards of Opportunity</a></h4>
+      <p>A mindfulness and personal growth app using reflection prompts and empowering messages. Designed with a clean, minimalist aesthetic and intuitive interactions.</p>
+    </div>
+    <div class="project">
+      <h4><a href="https://apps.apple.com/us/app/wardcount/id6737144611" target="_blank">WardCount</a></h4>
+      <p>A fast, elegant sacrament attendance tracker for Latter-day Saint ward clerks. Built with SwiftUI and optimized for ease of use during meetings.</p>
+    </div>
+  </section>
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:iramirez22ios@gmail.com">iramirez22ios@gmail.com</a></p>
-      <p>GitHub: <a href="https://github.com/ramirezi29" target="_blank">github.com/ramirezi29</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/ivanramirez" target="_blank">linkedin.com/in/ivanramirez</a></p>
-      <p>Resume: <a href="ResumeRamirezIvan-iOS.pdf" target="_blank">Download PDF</a></p>
-    </section>
-  </main>
+  <section id="contact">
+    <h3>Contact</h3>
+    <p>Email: <a href="mailto:iramirez22ios@gmail.com">iramirez22ios@gmail.com</a></p>
+    <p>GitHub: <a href="https://github.com/ramirezi29" target="_blank">@ramirezi29</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/ivanramirez" target="_blank">ivanramirez</a></p>
+    <p><a href="ResumeRamirezIvan-iOS.pdf" target="_blank">Download Resume (PDF)</a></p>
+  </section>
 
   <footer>
-    <p>&copy; 2025 Ivan Ramirez. All rights reserved.</p>
+    <p>&copy; 2025 Ivan Ramirez. Designed with Apple aesthetics in mind.</p>
   </footer>
 </body>
 </html>
