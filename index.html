@@ -4,7 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ivan Ramirez | iOS Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg-color: #f2f2f7;
+      --text-color: #1c1c1e;
+      --accent: #0071e3;
+      --glass: rgba(255, 255, 255, 0.6);
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -12,10 +22,10 @@
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
-        Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-      background: linear-gradient(135deg, #e6e9f0 0%, #eef1f5 100%);
-      color: #1c1c1e;
+      font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
+      scroll-behavior: smooth;
     }
 
     nav {
@@ -23,17 +33,18 @@
       top: 0;
       width: 100%;
       padding: 1rem 2rem;
-      backdrop-filter: blur(10px);
-      background: rgba(255, 255, 255, 0.7);
-      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(14px);
+      background: var(--glass);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      z-index: 100;
+      z-index: 10;
+      border-bottom: 1px solid rgba(200,200,200,0.2);
     }
 
     nav h1 {
-      font-size: 1.5rem;
+      font-size: 1.4rem;
+      font-weight: 600;
     }
 
     nav ul {
@@ -44,60 +55,81 @@
 
     nav ul li a {
       text-decoration: none;
-      color: #1c1c1e;
+      color: var(--text-color);
       font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: var(--accent);
     }
 
     header {
-      height: 100vh;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
+      justify-content: center;
+      height: 100vh;
+      padding-top: 4rem;
+      background: linear-gradient(to bottom right, #f2f2f7, #ffffff);
       text-align: center;
-      padding: 4rem 2rem 2rem;
     }
 
     header h2 {
-      font-size: 3rem;
+      font-size: 2.8rem;
       font-weight: 600;
-      color: #1c1c1e;
+      margin-bottom: 1rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      color: #444;
     }
 
     section {
-      padding: 5rem 10% 2rem;
-      max-width: 960px;
-      margin: 0 auto;
+      max-width: 1000px;
+      margin: 4rem auto;
+      padding: 0 2rem;
     }
 
     section h3 {
       font-size: 2rem;
-      margin-bottom: 1rem;
-      color: #0071e3;
+      margin-bottom: 2rem;
+      color: var(--accent);
     }
 
-    .project {
-      margin-bottom: 2.5rem;
-      padding: 1.5rem;
-      background: rgba(255, 255, 255, 0.6);
-      border-radius: 20px;
-      backdrop-filter: blur(12px);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    .card {
+      background: var(--glass);
+      backdrop-filter: blur(14px);
+      padding: 2rem;
+      border-radius: 24px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+      margin-bottom: 2rem;
     }
 
-    .project h4 {
+    .card h4 {
+      font-size: 1.5rem;
       margin-bottom: 0.5rem;
     }
 
-    .project a {
-      color: #0071e3;
+    .card a {
+      color: var(--accent);
       text-decoration: none;
+      font-weight: 500;
     }
 
     footer {
       text-align: center;
-      padding: 3rem 2rem;
       font-size: 0.9rem;
-      color: #888;
+      color: #777;
+      padding: 3rem 2rem;
+    }
+
+    @media (max-width: 768px) {
+      header h2 {
+        font-size: 2rem;
+      }
     }
   </style>
 </head>
@@ -106,44 +138,47 @@
     <h1>Ivan Ramirez</h1>
     <ul>
       <li><a href="#about">About</a></li>
-      <li><a href="#projects">Apps</a></li>
+      <li><a href="#apps">Apps</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
   <header>
-    <h2>iOS Engineer crafting intuitive and elegant Apple-native experiences.</h2>
+    <h2>Crafting beautiful iOS experiences with code & care.</h2>
+    <p>Hi, I’m Ivan — an iOS Developer focused on building polished SwiftUI apps inspired by Apple design.</p>
   </header>
 
   <section id="about">
     <h3>About Me</h3>
-    <p>
-      I'm an iOS developer with a background in psychology and a passion for building smooth, accessible, and delightful apps. I focus on Apple's latest technologies like SwiftUI, Combine, and VisionKit to create user experiences that feel native, thoughtful, and fast. I'm currently a contract Software Content Engineer at Apple.
-    </p>
+    <div class="card">
+      <p>I'm a seasoned iOS developer with a background in psychology and a passion for intuitive mobile UX. I build apps that feel native and seamless, using SwiftUI, Combine, and Apple's Human Interface Guidelines. Currently contributing to Apple as a Software Content Engineer.</p>
+    </div>
   </section>
 
-  <section id="projects">
-    <h3>Apps</h3>
-    <div class="project">
+  <section id="apps">
+    <h3>Featured Apps</h3>
+    <div class="card">
       <h4><a href="https://apps.apple.com/us/app/cardsofopportunity/id6476826273" target="_blank">Cards of Opportunity</a></h4>
-      <p>A mindfulness and personal growth app using reflection prompts and empowering messages. Designed with a clean, minimalist aesthetic and intuitive interactions.</p>
+      <p>A holistic personal growth tool delivering empowering prompts and affirmations in a beautiful, calming interface.</p>
     </div>
-    <div class="project">
+    <div class="card">
       <h4><a href="https://apps.apple.com/us/app/wardcount/id6737144611" target="_blank">WardCount</a></h4>
-      <p>A fast, elegant sacrament attendance tracker for Latter-day Saint ward clerks. Built with SwiftUI and optimized for ease of use during meetings.</p>
+      <p>A streamlined app designed for ward clerks to log sacrament attendance, fast and distraction-free.</p>
     </div>
   </section>
 
   <section id="contact">
-    <h3>Contact</h3>
-    <p>Email: <a href="mailto:iramirez22ios@gmail.com">iramirez22ios@gmail.com</a></p>
-    <p>GitHub: <a href="https://github.com/ramirezi29" target="_blank">@ramirezi29</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/ivanramirez" target="_blank">ivanramirez</a></p>
-    <p><a href="ResumeRamirezIvan-iOS.pdf" target="_blank">Download Resume (PDF)</a></p>
+    <h3>Get in Touch</h3>
+    <div class="card">
+      <p>Email: <a href="mailto:iramirez22ios@gmail.com">iramirez22ios@gmail.com</a></p>
+      <p>GitHub: <a href="https://github.com/ramirezi29" target="_blank">@ramirezi29</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/ivanramirez" target="_blank">ivanramirez</a></p>
+      <p><a href="ResumeRamirezIvan-iOS.pdf" target="_blank">View My Resume</a></p>
+    </div>
   </section>
 
   <footer>
-    <p>&copy; 2025 Ivan Ramirez. Designed with Apple aesthetics in mind.</p>
+    <p>&copy; 2025 Ivan Ramirez — Built with SwiftUI aesthetic and Apple-style UX inspiration.</p>
   </footer>
 </body>
 </html>
