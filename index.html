@@ -1,184 +1,630 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ivan Ramirez | iOS Developer</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg-color: #f2f2f7;
-      --text-color: #1c1c1e;
-      --accent: #0071e3;
-      --glass: rgba(255, 255, 255, 0.6);
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#FFFFFF" />
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    <meta
+      name="description"
+      content="My name is Ivan, I come from Croatia and I'm actively learning
+    swift to become an iOS developer."
+    />
 
-    body {
-      font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
-      background: var(--bg-color);
-      color: var(--text-color);
-      scroll-behavior: smooth;
-    }
+    <meta
+      property="og:title"
+      content="Portfolio - Ivan Ramirez, iOS Developer"
+    />
+    <meta
+      property="og:description"
+      content="My name is Ivan, I come from Croatia and I'm actively learning
+      swift to become an iOS developer."
+    />
+    <meta
+      property="og:image"
+      content="https://ramirezi29.github.io/img/IvanRamirez-dev-portfolio.png"
+    />
+    <meta property="og:url" content="https://ivan.github.io/" />
+    <meta
+      property="og:site_name"
+      content="Portfolio - Ivan Ramirez, iOS Developer"
+    />
 
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      padding: 1rem 2rem;
-      backdrop-filter: blur(14px);
-      background: var(--glass);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 10;
-      border-bottom: 1px solid rgba(200,200,200,0.2);
-    }
+    <link rel="apple-touch-icon" href="img/apple-icon.png" />
+    <link rel="shortcut icon" type="image/jpg" href="img/favicon.png" />
 
-    nav h1 {
-      font-size: 1.4rem;
-      font-weight: 600;
-    }
+    <link rel="stylesheet" href="style.css?v=2.0" />
+    <title>Ivan Ramirez, iOS Engineer</title>
+  </head>
+  <body ontouchstart="">
+    <header class="header">
+      <div class="header__button no__highlights">
+        <div class="header__ham">
+          <span>&nbsp;</span>
+          <span>&nbsp;</span>
+          <span>&nbsp;</span>
+        </div>
+      </div>
+      <div class="header__bg">&nbsp;</div>
+      <nav class="header__nav">
+        <div class="header__nav-item">
+          <span>Portfolio</span>
+          <ul>
+            <li>
+              <a class="header__nav-link" href="/portfolio/stayfitshop.html"
+                >StayFitShop</a
+              >
+            </li>
+            <li>
+              <a class="header__nav-link" href="/portfolio/stranger-chats.html"
+                >Stranger Chats</a
+              >
+            </li>
+            <li>
+              <a aria-label="Github"
+              rel="noreferrer noopener"
+              target="_blank" 
+              class="header__nav-link" 
+              href="https://github.com/IvanRamirez/CombinedLogin"
+                >CombinedLogin →</a
+              >
+            </li>
+            <li>
+              <a aria-label="Github"
+              rel="noreferrer noopener"
+              target="_blank" 
+              class="header__nav-link" 
+              href="https://github.com/IvanRamirez/CustomTabBar"
+                >CustomTabBar →</a
+              >
+            </li>
+            <li>
+              <a aria-label="Github"
+              rel="noreferrer noopener"
+              target="_blank" 
+              class="header__nav-link" 
+              href="https://github.com/IvanRamirez/YTFilter"
+                >YTFilter →</a
+              >
+            </li>
+            <li>
+              <a aria-label="Github"
+              rel="noreferrer noopener"
+              target="_blank" 
+              class="header__nav-link" 
+              href="https://github.com/IvanRamirez/SideMenu"
+                >SideMenu →</a
+              >
+            </li>
+            <li>
+              <a aria-label="Github"
+              rel="noreferrer noopener"
+              target="_blank" 
+              class="header__nav-link" 
+              href="https://github.com/IvanRamirez/TheSlider"
+                >TheSlider →</a
+              >
+            </li>
+            <li>
+              <a aria-label="Github"
+              rel="noreferrer noopener"
+              target="_blank" 
+              class="header__nav-link" 
+              href="https://github.com/IvanRamirez/openweather-UIKit"
+                >OpenWeather →</a
+              >
+            </li>
+            <li>
+              <a aria-label="Github"
+              rel="noreferrer noopener"
+              target="_blank" 
+              class="header__nav-link" 
+              href="https://github.com/IvanRamirez/FriendFaceChallenge"
+                >FriendFace Challenge →</a
+              >
+            </li>
+            <li>
+              <a aria-label="Github"
+              rel="noreferrer noopener"
+              target="_blank" 
+              class="header__nav-link" 
+              href="https://github.com/IvanRamirez/BMICalculator-iOS-UIKit"
+                >BMICalculator →</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="header__nav-item">
+          <span>menu</span>
+          <ul>
+            <li>
+              <a class="header__nav-link" href="/index.html">Home</a>
+            </li>
+            <li><a class="header__nav-link" href="about.html">About</a></li>
+            <li><a class="header__nav-link" href="privacy.html">Privacy</a></li>
+          </ul>
+        </div>
+        <div class="header__nav-item">
+          <span>Contact</span>
+          <ul>
+            <li>
+              <a
+                class="button button-white no__highlights"
+                rel="noreferrer noopener"
+                target="_blank"
+                href="https://twitter.com/IvanRamirez"
+              >
+                <svg class="button-icon">
+                  <use xlink:href="/icons/sprite.svg#vector-twitter"></use>
+                </svg>
+                Twitter
+              </a>
+            </li>
+            <li>
+              <a
+                class="button button-white no__highlights"
+                rel="noreferrer noopener"
+                target="_blank"
+                href="https://IvanRamirez.github.io/files/IvanRamirezCV.pdf"
+              >
+                Download CV
+              </a>
+            </li>
+            <li>
+              <div class="button send-email button-white no__highlights">
+                <svg class="button-icon">
+                  <use xlink:href="/icons/sprite.svg#vector-mail"></use>
+                </svg>
+                Email Address
+              </div>
+              <div class="email-address"></div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
 
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 1.5rem;
-    }
+    <section class="hero">
+      <img
+        src="img/decoration/grid-dots.png"
+        alt="grid-dots"
+        class="grid__dots"
+      />
+      <div class="decoration__element">&nbsp;</div>
+      <div class="decoration__element2">&nbsp;</div>
+      <div class="hero__info">
+        <img class="hero__info-img" src="img/profile-pic.jpg" alt="profile__photo">
+        <div class="hero__text">
+          <h1>Ivan Ramirez</h1>
+          <span class="hero__text-desc">iOS Developer at DECODE® Zagreb</span>
+        </div>
+      </div>
+      <div class="hero__cta">
+        <span>portfolio</span>
+        <div class="hero__cta-icon">
+          <svg class="hero__icon">
+            <use xlink:href="/icons/sprite.svg#vector-arrow"></use>
+          </svg>
+        </div>
+      </div>
+    </section>
 
-    nav ul li a {
-      text-decoration: none;
-      color: var(--text-color);
-      font-weight: 500;
-      transition: color 0.3s ease;
-    }
+    <section class="stayfitshop">
+      <div class="stayfitshop__slider slider">
+        <div class="slider__next slider__btn no__highlights">
+          <svg class="slider__next-icon slider__icon">
+            <use xlink:href="/icons/sprite.svg#vector-arrow"></use>
+          </svg>
+        </div>
+        <div class="slider__prev slider__btn no__highlights">
+          <svg class="slider__prev-icon slider__icon">
+            <use xlink:href="/icons/sprite.svg#vector-arrow"></use>
+          </svg>
+        </div>
+        <div class="stayfitshop__slider-container slider-container">
+          <img
+            class="slide lazy-img"
+            data-src="img/stay-fit-shop/Latest.png"
+            src="img/open-weather/lazy.png"
+            alt="slide"
+          />
+          <img
+            class="slide lazy-img"
+            data-src="img/stay-fit-shop/Popular.png"
+            src="img/open-weather/lazy.png"
+            alt="slide"
+          />
+          <img
+            class="slide lazy-img"
+            data-src="img/stay-fit-shop/Cart.png"
+            src="img/open-weather/lazy.png"
+            alt="slide"
+          />
+          <img
+            class="slide lazy-img"
+            data-src="img/stay-fit-shop/Profile.png"
+            src="img/open-weather/lazy.png"
+            alt="slide"
+          />
+          <img
+            class="slide lazy-img"
+            data-src="img/stay-fit-shop/Search.png"
+            src="img/open-weather/lazy.png"
+            alt="slide"
+          />
+          <img
+            class="slide lazy-img"
+            data-src="img/stay-fit-shop/Product.png"
+            src="img/open-weather/lazy.png"
+            alt="slide"
+          />
+          <img
+            class="slide lazy-img"
+            data-src="img/stay-fit-shop/Product2.png"
+            src="img/open-weather/lazy.png"
+            alt="slide"
+          />
+          <img
+            class="slide lazy-img"
+            data-src="img/stay-fit-shop/Checkout.png"
+            src="img/open-weather/lazy.png"
+            alt="slide"
+          />
+        </div>
+        <div class="slider__indicator"></div>
+      </div>
+      </div>
+      <div class="stayfitshop__info">
+        <h2>StayFitShop</h2>
+        <p>
+          Made using SwiftUI, StayFitShop is a shopping application that enables
+          users to browse and search products downloaded from the server and
+          cached using Core Data Framework, add them to Cart, create their user
+          profile and Checkout.
+        </p>
+        <div class="stayfitshop__cta">
+          <a
+            aria-label="Github"
+            rel="noreferrer noopener"
+            target="_blank"
+            href="https://github.com/IvanRamirez/StayFitShop"
+            class="github__button button button-dark no__highlights"
+          >
+            <svg class="github__button-icon button-icon-light">
+              <use xlink:href="/icons/sprite.svg#vector-github-logo"></use>
+            </svg>
+            <svg class="github__button-icon button-icon-light">
+              <use xlink:href="/icons/sprite.svg#vector-github-logo-text"></use>
+            </svg>
+          </a>
+          <a
+            href="/portfolio/stayfitshop.html"
+            class="button button-hollow-dark no__highlights"
+            >more info</a
+          >
+        </div>
+      </div>
+    </section>
 
-    nav ul li a:hover {
-      color: var(--accent);
-    }
+    <section class="stranger__chats">
+      <div class="stranger__chats-info">
+        <h2>Stranger Chats</h2>
+        <p>
+          A Firebase programmatic UIKit chat app for people who have strange
+          friends. Users can register their account, login, add friends via
+          their email address, add their friends' profile image and chat. All
+          data is synced to the Firebase Firestore database.
+        </p>
+        <div class="stranger__chats-cta">
+          <a
+            aria-label="Github"
+            rel="noreferrer noopener"
+            target="_blank"
+            href="https://github.com/IvanRamirez/Stranger-Chats"
+            class="github__button button button-white no__highlights"
+          >
+            <svg class="github__button-icon button-icon">
+              <use xlink:href="/icons/sprite.svg#vector-github-logo"></use>
+            </svg>
+            <svg class="github__button-icon button-icon">
+              <use xlink:href="/icons/sprite.svg#vector-github-logo-text"></use>
+            </svg>
+          </a>
+          <a
+            href="/portfolio/stranger-chats.html"
+            class="button button-white no__highlights"
+            >more info</a
+          >
+        </div>
+      </div>
+    </section>
 
-    header {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      padding-top: 4rem;
-      background: linear-gradient(to bottom right, #f2f2f7, #ffffff);
-      text-align: center;
-    }
+    <section class="showcase">
+      <h2 class="showcase__title">More Apps & Projects</h2>
 
-    header h2 {
-      font-size: 2.8rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
-    }
+      <div class="showcase__item">
+        <div class="showcase__item-video">
+          <video controls
+          preload="none"
+          poster="img/showcase/combinedlogin-thumb.jpeg" src="img/showcase/combinedlogin-video.mp4"></video>
+        </div>
+        <div class="showcase__item-info">
+          <div class="showcase__item-info-text">
+            <h3>CombinedLogin</h3>
+            <p>A simple register/login screen to showcase the implementation of Combine Framework in UIKit with MVVM architecture. All fields are required and the password fields must match before the submit button is enabled.</p>
+            <p>To add the extra touch to the design, I used custom fonts and background for this form.</p>
+            <span>UIKit</span>
+            <span>Combine</span>
+            <span>MVVM</span>
+            <span>Custom Fonts</span>
+          </div>
+          <div class="showcase__item-info-cta">
+            <a
+            aria-label="Github"
+            rel="noreferrer noopener"
+            target="_blank"
+            href="https://github.com/IvanRamirez/CombinedLogin"
+            class="github__button button button-dark no__highlights"
+          >
+            <svg class="github__button-icon button-icon-light">
+              <use xlink:href="/icons/sprite.svg#vector-github-logo"></use>
+            </svg>
+            <svg class="github__button-icon button-icon-light">
+              <use xlink:href="/icons/sprite.svg#vector-github-logo-text"></use>
+            </svg>
+          </a>
+          </div>
+        </div>
+      </div>
 
-    header p {
-      font-size: 1.2rem;
-      max-width: 600px;
-      color: #444;
-    }
+      <div class="showcase__item">
+        <div class="showcase__item-video">
+          <video controls
+          preload="none"
+          poster="img/showcase/custom-tabbar-thumb.jpeg" src="img/showcase/custom-tabbar-video.mp4"></video>
+        </div>
+        <div class="showcase__item-info">
+          <div class="showcase__item-info-text">
+            <h3>Custom TabBar</h3>
+            <p>This custom TabBar is made with SwiftUI buttons. Works on all device sizes and orientations. There is a state property "selectedTab" that tracks which tab button is pressed and switches over the enum to show the corresponding view as well as style the buttons.</p>
+            <p>Spring animations added to tabbar buttons for extra flare.</p>
+            <span>SwiftUI</span>
+            <span>custom tabbar</span>
+          </div>
+          <div class="showcase__item-info-cta">
+            <a
+            aria-label="Github"
+            rel="noreferrer noopener"
+            target="_blank"
+            href="https://github.com/IvanRamirez/CustomTabBar"
+            class="github__button button button-dark no__highlights"
+          >
+            <svg class="github__button-icon button-icon-light">
+              <use xlink:href="/icons/sprite.svg#vector-github-logo"></use>
+            </svg>
+            <svg class="github__button-icon button-icon-light">
+              <use xlink:href="/icons/sprite.svg#vector-github-logo-text"></use>
+            </svg>
+          </a>
+          </div>
+        </div>
+      </div>
 
-    section {
-      max-width: 1000px;
-      margin: 4rem auto;
-      padding: 0 2rem;
-    }
+      <div class="showcase__item">
+        <div class="showcase__item-video">
+          <video controls
+          preload="none"
+          poster="img/showcase/ytfilter-thumb.jpeg" src="img/showcase/ytfilter-video.mp4"></video>
+        </div>
+        <div class="showcase__item-info">
+          <div class="showcase__item-info-text">
+            <h3>YTFilter</h3>
+            <p>Built using SwiftUI where the app filters content in a list based on a button press similar to the YouTube app on iOS (only the content is in image form, not video).</p>
+            <p> All categories are added to the selector automatically based on the included data. By tapping on each category, the list shows coresponding data.</p>
+            <span>SwiftUI</span>
+            <span>customized list view</span>
+            <span>MapKit</span>
+          </div>
+          <div class="showcase__item-info-cta">
+            <a
+            aria-label="Github"
+            rel="noreferrer noopener"
+            target="_blank"
+            href="https://github.com/IvanRamirez/YTFilter"
+            class="github__button button button-dark no__highlights"
+          >
+            <svg class="github__button-icon button-icon-light">
+              <use xlink:href="/icons/sprite.svg#vector-github-logo"></use>
+            </svg>
+            <svg class="github__button-icon button-icon-light">
+              <use xlink:href="/icons/sprite.svg#vector-github-logo-text"></use>
+            </svg>
+          </a>
+          </div>
+        </div>
+      </div>
 
-    section h3 {
-      font-size: 2rem;
-      margin-bottom: 2rem;
-      color: var(--accent);
-    }
+      <div class="showcase__item">
+        <div class="showcase__item-video">
+          <video controls
+          preload="none"
+          poster="img/showcase/side-menu-thumb.jpeg" src="img/showcase/side-menu-video.mp4"></video>
+        </div>
+        <div class="showcase__item-info">
+          <div class="showcase__item-info-text">
+            <h3>SideMenu</h3>
+            <p>UIKit based side menu activated by button press for a Swift iOS app. To showcase the feature, I made an "email-like" app where users can open the menu by pressing the navigation bar button.</p>
+            <p>The menu slides from the left and shows possible categories to filter shown messages. To close the menu, users can tap on a category, tap at the empty spaces to the right or drag the menu to the left.</p>
+            <span>UIKit</span>
+            <span>Storyboard</span>
+            <span>xib</span>
+          </div>
+          <div class="showcase__item-info-cta">
+            <a
+            aria-label="Github"
+            rel="noreferrer noopener"
+            target="_blank"
+            href="https://github.com/IvanRamirez/SideMenu"
+            class="github__button button button-dark no__highlights"
+          >
+            <svg class="github__button-icon button-icon-light">
+              <use xlink:href="/icons/sprite.svg#vector-github-logo"></use>
+            </svg>
+            <svg class="github__button-icon button-icon-light">
+              <use xlink:href="/icons/sprite.svg#vector-github-logo-text"></use>
+            </svg>
+          </a>
+          </div>
+        </div>
+      </div>
 
-    .card {
-      background: var(--glass);
-      backdrop-filter: blur(14px);
-      padding: 2rem;
-      border-radius: 24px;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
-      margin-bottom: 2rem;
-    }
+      <div class="showcase__item">
+        <div class="showcase__item-video">
+          <video controls
+          preload="none"
+          poster="img/showcase/theslider-thumb.jpeg" src="img/showcase/theslider-video.mp4"></video>
+        </div>
+        <div class="showcase__item-info">
+          <div class="showcase__item-info-text">
+            <h3>TheSlider</h3>
+            <p>This is a simple content slider built using SwiftUI with the help of TabView and its custom TabViewStyle. I decided not to use the default index display mode so I made my own.</p>
+            <p>The slider works by dragging the image on top and the rest of the content updates by updating the selectedIndex property which is bound in TabView. This also updates the custom index display which I called the SlideIndicatorView.</p>
+            <span>SwiftUI</span>
+            <span>custom index display mode</span>
+          </div>
+          <div class="showcase__item-info-cta">
+            <a
+            aria-label="Github"
+            rel="noreferrer noopener"
+            target="_blank"
+            href="https://github.com/IvanRamirez/TheSlider"
+            class="github__button button button-dark no__highlights"
+          >
+            <svg class="github__button-icon button-icon-light">
+              <use xlink:href="/icons/sprite.svg#vector-github-logo"></use>
+            </svg>
+            <svg class="github__button-icon button-icon-light">
+              <use xlink:href="/icons/sprite.svg#vector-github-logo-text"></use>
+            </svg>
+          </a>
+          </div>
+        </div>
+      </div>
 
-    .card h4 {
-      font-size: 1.5rem;
-      margin-bottom: 0.5rem;
-    }
+      <div class="showcase__item">
+        <div class="showcase__item-video">
+          <video controls
+          preload="none"
+          poster="img/showcase/openweather-thumb.jpeg" src="img/showcase/openweather-video.mp4"></video>
+        </div>
+        <div class="showcase__item-info">
+          <div class="showcase__item-info-text">
+            <h3>OpenWeather</h3>
+            <p>A Simple weather app made using OpenWeatherMap API for current weather
+              conditions. Users can search weather conditions by city name or by
+              tapping the location button to use their current location for fetching
+              weather.</p>
+              <p>The background images change depending on the fetched weather data. There are a few options: cloudy, rain, snow, sunny and storm.</p>
+            <span>uikit</span>
+            <span>storyboard</span>
+            <span>api</span>
+          </div>
+          <div class="showcase__item-info-cta">
+            <a
+            aria-label="Github"
+            rel="noreferrer noopener"
+            target="_blank"
+            href="https://github.com/IvanRamirez/openweather-UIKit"
+            class="github__button button button-dark no__highlights"
+          >
+            <svg class="github__button-icon button-icon-light">
+              <use xlink:href="/icons/sprite.svg#vector-github-logo"></use>
+            </svg>
+            <svg class="github__button-icon button-icon-light">
+              <use xlink:href="/icons/sprite.svg#vector-github-logo-text"></use>
+            </svg>
+          </a>
+          </div>
+        </div>
+      </div>
 
-    .card a {
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 500;
-    }
+      <div class="showcase__item">
+        <div class="showcase__item-video">
+          <video controls
+          preload="none"
+          poster="img/showcase/friendface-thumb.jpeg" src="img/showcase/friendface-video.mp4"></video>
+        </div>
+        <div class="showcase__item-info">
+          <div class="showcase__item-info-text">
+            <h3>FriendFace Challenge</h3>
+            <p>I made this app while attending Paul Hudson's 100 days of SwiftUI course as a challenge set by Paul. The app needs to download data from the internet, save it device using CoreData asynchronously and display it in the UI.</p>
+            <p>I enjoyed this challenge so much I made a tutorial on how it's done on Medium. Check it out here -> <a href="https://medium.com/@IvanRamirez/solving-friendface-100daysofswiftui-challenge-day-60-61-754309014448">FriendFace Challenge Tutorial</a></p>
+            <span>SwiftUI</span>
+            <span>Challenge</span>
+            <span>tutorial</span>
+          </div>
+          <div class="showcase__item-info-cta">
+            <a
+            aria-label="Github"
+            rel="noreferrer noopener"
+            target="_blank"
+            href="https://github.com/IvanRamirez/FriendFaceChallenge"
+            class="github__button button button-dark no__highlights"
+          >
+            <svg class="github__button-icon button-icon-light">
+              <use xlink:href="/icons/sprite.svg#vector-github-logo"></use>
+            </svg>
+            <svg class="github__button-icon button-icon-light">
+              <use xlink:href="/icons/sprite.svg#vector-github-logo-text"></use>
+            </svg>
+          </a>
+          </div>
+        </div>
+      </div>
 
-    footer {
-      text-align: center;
-      font-size: 0.9rem;
-      color: #777;
-      padding: 3rem 2rem;
-    }
+      <div class="showcase__item">
+        <div class="showcase__item-video">
+          <video controls
+          preload="none"
+          poster="img/showcase/bmi-calculator-thumb.jpeg" src="img/showcase/bmi-calculator-video.mp4"></video>
+        </div>
+        <div class="showcase__item-info">
+          <div class="showcase__item-info-text">
+            <h3>BMICalculator</h3>
+            <p>Made during my iOS Development course by Dr. Angela Yu on Udemy using UIKit and storyboards. The user can input their weight and height information using sliders and calculate their BMI by pressing the calculate button.</p>
+            <p>The value is calculated and presented in a new view controller modally. Pressing the recalculate button dismisses the view controller.</p>
+            <span>uikit</span>
+            <span>storyboard</span>
+          </div>
+          <div class="showcase__item-info-cta">
+            <a
+            aria-label="Github"
+            rel="noreferrer noopener"
+            target="_blank"
+            href="https://github.com/IvanRamirez/BMICalculator-iOS-UIKit"
+            class="github__button button button-dark no__highlights"
+          >
+            <svg class="github__button-icon button-icon-light">
+              <use xlink:href="/icons/sprite.svg#vector-github-logo"></use>
+            </svg>
+            <svg class="github__button-icon button-icon-light">
+              <use xlink:href="/icons/sprite.svg#vector-github-logo-text"></use>
+            </svg>
+          </a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    @media (max-width: 768px) {
-      header h2 {
-        font-size: 2rem;
-      }
-    }
-  </style>
-</head>
-<body>
-  <nav>
-    <h1>Ivan Ramirez</h1>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#apps">Apps</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
 
-  <header>
-    <h2>Crafting beautiful iOS experiences with code & care.</h2>
-    <p>Hi, I’m Ivan — an iOS Developer focused on building polished SwiftUI apps inspired by Apple design.</p>
-  </header>
+    <footer class="footer">
+      <div class="footer__content">
+        <a href="about.html">About/Contact</a>
+        <a href="privacy.html">Privacy</a>
+      </div>
+    </footer>
 
-  <section id="about">
-    <h3>About Me</h3>
-    <div class="card">
-      <p>I'm a seasoned iOS developer with a background in psychology and a passion for intuitive mobile UX. I build apps that feel native and seamless, using SwiftUI, Combine, and Apple's Human Interface Guidelines. Currently contributing to Apple as a Software Content Engineer.</p>
-    </div>
-  </section>
-
-  <section id="apps">
-    <h3>Featured Apps</h3>
-    <div class="card">
-      <h4><a href="https://apps.apple.com/us/app/cardsofopportunity/id6476826273" target="_blank">Cards of Opportunity</a></h4>
-      <p>A holistic personal growth tool delivering empowering prompts and affirmations in a beautiful, calming interface.</p>
-    </div>
-    <div class="card">
-      <h4><a href="https://apps.apple.com/us/app/wardcount/id6737144611" target="_blank">WardCount</a></h4>
-      <p>A streamlined app designed for ward clerks to log sacrament attendance, fast and distraction-free.</p>
-    </div>
-  </section>
-
-  <section id="contact">
-    <h3>Get in Touch</h3>
-    <div class="card">
-      <p>Email: <a href="mailto:iramirez22ios@gmail.com">iramirez22ios@gmail.com</a></p>
-      <p>GitHub: <a href="https://github.com/ramirezi29" target="_blank">@ramirezi29</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/ivanramirez" target="_blank">ivanramirez</a></p>
-      <p><a href="ResumeRamirezIvan-iOS.pdf" target="_blank">View My Resume</a></p>
-    </div>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Ivan Ramirez — Built with SwiftUI aesthetic and Apple-style UX inspiration.</p>
-  </footer>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
