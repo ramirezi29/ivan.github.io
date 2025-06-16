@@ -1,253 +1,129 @@
-// Header
-// ===========================
-const headerBtn = document.querySelector(".header__button");
-const headerBg = document.querySelector(".header__bg");
-const headerBtnHam = document.querySelector(".header__ham");
-const headerNav = document.querySelector(".header__nav");
+""// Apple-style Optimized Script with UX Best Practices
 
-headerBtn.addEventListener("click", function () {
-  headerBg.classList.toggle("expand-bg");
-  headerBtnHam.classList.toggle("header__ham-close");
-  headerBtnHam.classList.toggle("header__ham");
-  headerNav.classList.toggle("show-nav");
-});
+document.addEventListener("DOMContentLoaded", () => {
+  // ===========================
+  // Navigation Toggle
+  // ===========================
+  const headerBtn = document.querySelector(".header__button");
+  const headerBg = document.querySelector(".header__bg");
+  const headerNav = document.querySelector(".header__nav");
+  const headerHam = document.querySelector(".header__ham");
 
-const sendEmail = document.querySelectorAll(".send-email");
-const emailAddress = document.querySelectorAll(".email-address");
+  if (headerBtn) {
+    headerBtn.addEventListener("click", () => {
+      headerBg?.classList.toggle("expand-bg");
+      headerNav?.classList.toggle("show-nav");
+      headerHam?.classList.toggle("header__ham-close");
+    });
+  }
 
-for (let i = 0; i < sendEmail.length; i++) {
-  sendEmail[i].addEventListener("click", function () {
-    const part1 = "viktor.mauzer";
-    const part2 = Math.pow(2, 6);
-    const part3 = String.fromCharCode(part2);
-    const part4 = "gmail.com";
-    const address = part1 + part3 + part4;
-    emailAddress[i].textContent = address;
-    emailAddress[i].style.cssText = "opacity: 1;";
+  // ===========================
+  // Email Reveal Logic
+  // ===========================
+  document.querySelectorAll(".send-email").forEach((trigger, index) => {
+    trigger.addEventListener("click", () => {
+      const email = "iramirez22" + String.fromCharCode(64) + "gmail.com";
+      const emailDisplay = document.querySelectorAll(".email-address")[index];
+      if (emailDisplay) {
+        emailDisplay.textContent = email;
+        emailDisplay.style.opacity = "1";
+      }
+    });
   });
-}
 
-// Slider
-// ===========================
-const sliders = document.querySelectorAll(".slider");
-
-if (sliders != null) {
-  sliders.forEach((slider) => {
-    const slides = slider.getElementsByClassName("slide");
-    const sliderIndicator = slider.querySelector(".slider__indicator");
+  // ===========================
+  // Slider Component
+  // ===========================
+  document.querySelectorAll(".slider").forEach((slider) => {
+    const slides = slider.querySelectorAll(".slide");
+    const indicators = slider.querySelector(".slider__indicator");
     const nextBtn = slider.querySelector(".slider__next");
     const prevBtn = slider.querySelector(".slider__prev");
-    const sliderContainer = slider.querySelector(".slider-container");
+    const container = slider.querySelector(".slider-container");
+    let current = 0;
 
-    let slideNumber = 1;
-    let slideAmount = 0;
-    let slideWidth = 0;
-
-    // Add dots below slider
-    // ==============================
-    for (let j = 0; j < slides.length; j++) {
-      sliderIndicator.insertAdjacentHTML(
+    // Create indicator dots
+    slides.forEach(() => {
+      indicators?.insertAdjacentHTML(
         "beforeend",
-        "<div class='slider__indicator-dot'>&nbsp;</div>"
+        "<div class='slider__indicator-dot'></div>"
       );
-    }
+    });
+    const dots = slider.querySelectorAll(".slider__indicator-dot");
 
-    const sliderDots = slider.querySelectorAll(".slider__indicator-dot");
-
-    const updateSliderIndicator = function (slideNumber) {
-      sliderDots.forEach((sliderDot) => {
-        sliderDot.classList.remove("slider__indicator-dot-selected");
-      });
-
-      sliderDots[slideNumber - 1].classList.add(
-        "slider__indicator-dot-selected"
+    const updateSlider = () => {
+      const offset = container.clientWidth * current;
+      container.style.transform = `translateX(-${offset}px)`;
+      container.style.transition = "transform 0.5s ease";
+      dots.forEach((dot, i) =>
+        dot.classList.toggle("slider__indicator-dot-selected", i === current)
       );
     };
 
-    updateSliderIndicator(1);
-
-    // Slider logic
-    // ==============================
-    window.addEventListener("load", function () {
-      const windowWidth = this.window.innerWidth;
-
-      const measureSlideWidth = function () {
-        slideWidth = sliderContainer.clientWidth / 10;
-      };
-
-      const updateSliderUI = function (slideAmount, slideNumber) {
-        sliderContainer.style.cssText =
-          "transform: translateX(-" +
-          slideAmount +
-          "rem); transition: all 0.5s;";
-
-        updateSliderIndicator(slideNumber);
-      };
-
-      const nextSlide = function () {
-        measureSlideWidth();
-
-        if (slideNumber < slides.length) {
-          slideAmount += slideWidth;
-          slideNumber++;
-
-          updateSliderUI(slideAmount, slideNumber);
-        } else {
-          slideAmount = 0;
-          slideNumber = 1;
-
-          updateSliderUI(slideAmount, slideNumber);
-        }
-      };
-
-      const prevSlide = function () {
-        measureSlideWidth();
-
-        if (slideNumber > 1) {
-          slideAmount -= slideWidth;
-          slideNumber--;
-
-          updateSliderUI(slideAmount, slideNumber);
-        } else {
-          slideNumber = slides.length;
-          slideAmount = slideWidth * (slideNumber - 1);
-
-          updateSliderUI(slideAmount, slideNumber);
-        }
-      };
-
-      this.window.addEventListener("resize", function () {
-        const windowWidthDelta = windowWidth - this.window.innerWidth;
-
-        if (Math.abs(windowWidthDelta) > 5) {
-          measureSlideWidth();
-          slideAmount = 0;
-          slideNumber = 1;
-          updateSliderUI(slideAmount, slideNumber);
-        }
-      });
-
-      nextBtn.addEventListener("click", nextSlide);
-      prevBtn.addEventListener("click", prevSlide);
-
-      // Touch gestures
-      let touchStartX = 0;
-      let touchEndX = 0;
-
-      const handleGesture = function () {
-        if (touchEndX < touchStartX - 50) {
-          nextSlide();
-        } else {
-          sliderContainer.style.cssText =
-            "transform: translateX(-" +
-            slideAmount +
-            "rem); transition: all 0.5s;";
-        }
-        if (touchEndX > touchStartX + 50) {
-          prevSlide();
-        } else {
-          sliderContainer.style.cssText =
-            "transform: translateX(-" +
-            slideAmount +
-            "rem); transition: all 0.5s;";
-        }
-      };
-
-      slider.addEventListener(
-        "touchstart",
-        function (e) {
-          touchStartX = e.changedTouches[0].screenX;
-        },
-        { passive: true }
-      );
-
-      slider.addEventListener(
-        "touchend",
-        function (e) {
-          touchEndX = e.changedTouches[0].screenX;
-          handleGesture();
-        },
-        { passive: true }
-      );
-
-      slider.addEventListener(
-        "touchmove",
-        function (e) {
-          let swipeAmount =
-            Math.abs(e.changedTouches[0].screenX - touchStartX) / 10;
-
-          if (e.changedTouches[0].screenX < touchStartX) {
-            sliderContainer.style.cssText =
-              "transform: translateX(-" + (slideAmount + swipeAmount) + "rem);";
-          } else {
-            sliderContainer.style.cssText =
-              "transform: translateX(-" + (slideAmount - swipeAmount) + "rem);";
-          }
-        },
-        { passive: true }
-      );
+    nextBtn?.addEventListener("click", () => {
+      current = (current + 1) % slides.length;
+      updateSlider();
     });
+
+    prevBtn?.addEventListener("click", () => {
+      current = (current - 1 + slides.length) % slides.length;
+      updateSlider();
+    });
+
+    // Touch support
+    let startX = 0;
+    container.addEventListener("touchstart", (e) => {
+      startX = e.touches[0].clientX;
+    });
+
+    container.addEventListener("touchend", (e) => {
+      const deltaX = e.changedTouches[0].clientX - startX;
+      if (deltaX < -50) current = (current + 1) % slides.length;
+      if (deltaX > 50) current = (current - 1 + slides.length) % slides.length;
+      updateSlider();
+    });
+
+    window.addEventListener("resize", updateSlider);
+    updateSlider();
   });
-}
 
-// Lazy Load Images
-const imageTargets = document.querySelectorAll("img[data-src]");
-
-if (imageTargets != null) {
-  const loadImage = function (entries, observer) {
-    const [entry] = entries;
-
-    if (!entry.isIntersecting) return;
-
-    entry.target.src = entry.target.dataset.src;
-
-    entry.target.addEventListener("load", function () {
-      entry.target.classList.remove("lazy-img");
+  // ===========================
+  // Lazy Load Images
+  // ===========================
+  const lazyImages = document.querySelectorAll("img[data-src]");
+  const lazyLoad = (entries, observer) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      const img = entry.target;
+      img.src = img.dataset.src;
+      img.onload = () => img.classList.remove("lazy-img");
+      observer.unobserve(img);
     });
-
-    observer.unobserve(entry.target);
   };
-
-  const imageObserver = new IntersectionObserver(loadImage, {
-    root: null,
-    threshold: 0.1,
+  const imgObserver = new IntersectionObserver(lazyLoad, {
     rootMargin: "200px",
+    threshold: 0.1,
   });
+  lazyImages.forEach((img) => imgObserver.observe(img));
 
-  imageTargets.forEach((img) => {
-    imageObserver.observe(img);
-  });
-}
-
-// Lazy load Galleries
-const galleryTargets = document.querySelectorAll(".gallery");
-
-if (galleryTargets != null) {
-  const loadGallery = function (entries, observer) {
-    const [entry] = entries;
-
-    if (!entry.isIntersecting) return;
-
-    const galleryItems = entry.target.querySelectorAll("img");
-
-    galleryItems.forEach((galleryItem) => {
-      galleryItem.src = galleryItem.dataset.src;
-
-      galleryItem.addEventListener("load", function () {
-        galleryItem.classList.remove("lazy-img");
+  // ===========================
+  // Lazy Load Galleries
+  // ===========================
+  const galleries = document.querySelectorAll(".gallery");
+  const loadGalleryImages = (entries, observer) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.querySelectorAll("img[data-src]").forEach((img) => {
+        img.src = img.dataset.src;
+        img.onload = () => img.classList.remove("lazy-img");
       });
+      observer.unobserve(entry.target);
     });
-
-    observer.unobserve(entry.target);
   };
-
-  const galleryObserver = new IntersectionObserver(loadGallery, {
-    root: null,
-    threshold: 0.1,
+  const galleryObserver = new IntersectionObserver(loadGalleryImages, {
     rootMargin: "200px",
+    threshold: 0.1,
   });
-
-  galleryTargets.forEach((gallery) => {
-    galleryObserver.observe(gallery);
-  });
-}
+  galleries.forEach((gallery) => galleryObserver.observe(gallery));
+});
+""
